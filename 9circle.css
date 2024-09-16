@@ -11,17 +11,19 @@ body{
     border: solid 1px crimson;
     display:grid;
     grid-template-columns: repeat(6,1fr);
-    grid-template-rows: repeat(6,minimax(200px,auto));
+    grid-template-rows: repeat(6,1fr);
     background-color: rgb(210, 207, 207);
     gap:3px;
     /* padding:30px; */
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 5px 5px 5px  rgba(0, 0, 0, 0.3);
+    transform: rotateZ(45deg);
     
 }
 .circle div p {
     margin:45%;
+    transform: rotate(-45deg);
 }
 
 .circle div{
@@ -53,8 +55,8 @@ body{
     grid-row:3/5;
     border:solid 3px pink;
     border-radius: 50%;
-    z-index: 1;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    /* z-index: 1; */
+    box-shadow: 7px 7px 7px  rgba(0, 0, 0, 0.3);
 }
 
 
