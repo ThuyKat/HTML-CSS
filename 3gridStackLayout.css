@@ -27,3 +27,84 @@
     /* this enable text-align, padding for a element */
     padding: 10px;
   }
+  nav a:hover{
+    background-color: #555;
+  }
+  /* social menu base styles */
+  a.tw{
+    background: url(tw.png) no-repeat center;
+    background-size: 80%;
+      
+  }
+  
+  a.fb{
+    background: url(fb.png) no-repeat center;
+    background-size: 80%;
+  }
+  .social a{
+    text-indent: -10000px;
+    /* margin: 0 auto; */
+  }
+  .social{
+    max-width: 80px;
+    margin: 0 auto; 
+    /* do at end */
+  }
+  /* grid vs flex base styles */
+  #blocks{
+    margin:20px;
+    
+}
+article{
+    margin-bottom: 20px;
+    background:#fff;
+    padding:10px;
+    box-sizing:border-box;
+}
+/*boxing-sizing property allows us to include the padding and border in an element's total width and height'*/
+/* flex styles */
+article h2{
+    text-align:center;
+    font-size:20px;
+    margin:10px 0;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+  }
+
+nav ul.social{
+    flex: 1 1 0px;
+    /* if not specify this li elements only take enough space for its content, but once this is defined li elements in total take up whole space inside parents and evenly distribute */
+    
+  }
+nav ul.social li{
+    /* border: solid 1px crimson; */
+    flex: 1 1 0;
+  }
+
+  @media screen and (min-width: 768px){
+
+
+nav li{
+    flex: 1 1 0;
+  }
+  nav ul{
+    display: flex;
+    /* border: solid 1px crimson; */
+    
+  }
+  ul.social{
+    margin: 0;
+  }
+  #block{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+article{
+    flex: 0 1 32%;
+    transition:flex-basis 0.2s linear;
+/*        adding animation*/
+}
+  }

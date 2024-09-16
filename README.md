@@ -19,7 +19,6 @@
  - Block elements can be vertically aligned using margin
  - Inline elements can be vertically aligned using vertical-align
 
-
 1. Nav bar
 
 ![alt text](image.png)
@@ -34,5 +33,5 @@
 --->Set margin: 0; and padding: 0; to remove browser default spacing
 
 -  style link consistently( remove underlines, set padding, colors, add hover)
-- Use position: fixed; to keep the navbar visible while scrolling
+-  Use position: fixed to keep the navbar visible while scrolling
 

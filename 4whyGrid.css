@@ -1,0 +1,183 @@
+body{
+    text-align: justify;
+}
+div.float{
+    border: solid 1px crimson;
+    margin:40px;
+    height:220px; 
+    color: aliceblue;
+    font-size: 15px;
+}
+.float header{
+    background:#1D9BC7;
+    text-align: center;
+    height:30px;
+    line-height: 30px;
+   
+}
+.float main{
+    background:#E8455F;
+    text-align:center;
+    height:160px;
+    width:60%;
+    float:right;
+   
+    
+}
+.float .sidebar{
+    float:left;
+    text-align: center;
+    
+}
+
+/* .float .sidebar:after{
+    content:"gggug";
+    display:block;
+    clear:both;
+    border:solid 1px crimson;
+} */
+.float aside{
+    background:#E89845;
+    height:80px;
+    text-align: center;  
+    /* border:solid 10px black; */
+}
+.float nav{
+    background:#59E845;
+    text-align: center;
+    height:80px; 
+
+}
+.float footer{
+    background:#A345E8;
+    text-align:center;
+    height:50px;
+}
+
+div.floatoption p{
+    color:#333;
+    font-family: arial;
+  }
+
+/*flex option*/
+div.flex{
+    color:aliceblue;
+    margin:40px;
+    font-size:15px;
+    border:solid 1px crimson;
+}
+.flex header{
+    background:#1D9BC7;
+    text-align: center;
+    height:30px;
+}
+.flex main{
+    
+    background:#E8455F;
+    text-align: center;
+    height:160px;
+    display:block;
+    width:60%;
+}
+.flex div.sidebar{
+    width:40%;
+    margin:0 auto;
+    border:solid 1px crimson;
+}
+.flex aside{
+    background:#E89845;
+    text-align:center;
+    /* display: block; */
+}
+.flex nav{
+    background:#59E845;
+    text-align:center;
+    /* display: block; */
+}
+.flex footer{
+    background:#A345E8;
+    text-align:center;
+    height:50px;
+}
+/*flex style*/
+.content{
+    display:flex;
+}
+.flex div.sidebar{
+    flex-wrap:wrap;
+    display:flex;  
+}
+.flex aside{
+    flex:1 1 350px;
+    height: 80px;
+  }
+  .flex nav{
+    flex:1 1 350px;
+    height: 80px;
+  }
+  .flex main{
+    flex:1 1 0;
+}
+div.flexoption p{
+    color:#333;
+    font-family: arial;
+}
+/*Grid option*/
+#grid{
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    /* 1fr means 1 fraction of avail space */
+/*    grid-template-rows:repeat(8,minmax(30px,auto)); to create 8 rows min height of 30px andn max height of auto to grow taller if needed*/
+    grid-auto-rows:minmax(30px,auto);
+    color:aliceblue;
+    text-align: center;
+    margin:40px;
+    max-width:1200px;
+    /* background-color: white; Color of the divider lines */
+    
+    z-index: 1;
+    background-image: 
+        linear-gradient(to right, black 1px, transparent 1px),
+        linear-gradient(to bottom, black 1px, transparent 1px);
+    background-size: 8.333% 12.5%;
+    
+}
+#grid header{
+    grid-column:1/13;
+    background:#1D9BC7;
+    opacity:50%;
+}
+#grid main{
+    grid-column:6/13;
+    grid-row:2/8;
+    background:#E8455F;
+    opacity:50%;
+    
+}
+
+
+#grid aside{
+    grid-column:1/6;
+    grid-row:2/5;
+    background:#E89845;
+    opacity:50%;
+}
+#grid nav{
+    grid-column:1/6;
+    grid-row:5/8;
+    background:#59E845;
+    opacity:50%;
+}
+#grid footer{
+    background:#A345E8;
+    grid-column:1/13;
+    grid-row:8/9;
+    height:50px;
+    opacity:50%;
+    
+}
+div.gridoption p{
+    color:#333;
+    font-family: arial;
+}
+

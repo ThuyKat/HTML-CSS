@@ -1,0 +1,75 @@
+<DOCTYPE! html>
+    <head>
+        <title>
+             Why GRID is so awesome!? 
+        </title>
+        <link rel="stylesheet" type="text/css" href="4whyGrid.css">
+    </head>
+    <body>
+        
+        <div class="floatoption">
+            <div class="float">
+                <header>Header</header>
+                
+                <div>
+                    <main>Main</main>
+                    <div class="sidebar"></div>
+                        <aside>Aside</aside>
+                        <nav>Nav</nav>
+                    
+                
+            
+            <footer>Footer</footer>
+        
+        </div>
+            </div>
+            
+            <h2> Option1: Using float </h2>
+            <p>
+            Header: place on top and do nothing with it because its staying on top according to normal stacking order. 
+            Next, we have two sections: right and left sections.
+            What we are going to do is that placing a "wrapper" around the left section, float it to the left and then two sections inside it
+            Then we are going to float the "Main" content to the right. And of course because we did that, we take all these elements out of their document flow, it will collapse that makes the footer sinked behind the content. So what we need to do is that we need to clear floats, place that at the bottom on top of the footer to resume the normal document flow. 
+            </p>
+            </div>
+        
+            <div class="flexoption">
+                <div class="flex">
+                     <header>Header</header>
+                
+                <div class="content">
+                    <main>Main</main>
+                    <div class="sidebar">
+                        <aside>Aside</aside>
+                        <nav>Nav</nav>
+                    </div>
+                </div>
+            
+                <footer>Footer</footer>
+            
+            
+            
+                </div>
+        
+        
+           <h2> Option 2: Using Flex</h2>     
+            <p> Flexbox is better but still has draw box: only good with one direction, still has to use markup to nest the flex items.The way I did it is that I apply flex display to the whole content to flex "Main" to the left, then once again I apply flex display to the sidebar to flex Aside and Nav once more in a way that it can be wrapped inside sidebar.Flex items' height and weight estimation is crucial in flex box option.</p>
+            </div>
+        <div class="gridoption">
+                <div id="grid">
+                     <header>Header</header>
+                    <main>Main</main>
+                    <aside>Aside</aside>
+                    <nav>Nav</nav>
+                   <footer>Footer</footer>
+                </div>
+            
+                <h2>Option 3: Using Grid</h2>
+                <p> There is only one div to group all items call grid grabper. We dont have to nest any elements inside other elements. The cool thing is the order of element in HTML is not important. So we have the flexibility. We can re-arange elements depends on the screen size. CSS grid treats the webpage like girds. </p>
+    
+        </div>
+    
+    </body>
+    
+    
+    </DOCTYPE!>
