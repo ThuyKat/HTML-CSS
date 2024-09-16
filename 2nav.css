@@ -1,0 +1,81 @@
+*{
+    font-family: Arial, sans-serif;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    max-width:1200px;
+    margin:0 auto;
+    background-color: #5D4954;
+    font-family: 'Poppins', sans-serif;
+
+ }
+
+ nav{
+ /*   background:#333; */
+   display: flex;
+   justify-content:space-between;
+   align-items: center;
+   min-height: 8vh;
+ }
+ .logo {
+    color: rgb(226, 226, 226);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+ ul{
+   display:flex;
+   /* border:solid 1px crimson; */
+   padding:0;
+   justify-content: space-around;
+   width: 30%;
+   
+   
+ }
+ li{
+   list-style-type:none;
+   /* border:solid 1px crimson; */
+ /*   margin: 15px; */
+  
+ }
+ a{
+   text-decoration:none;
+    text-align:center;
+    color: rgb(226, 226, 226);
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+   padding:10px;
+   display:block;
+ /*   background-color:orange; */
+ 
+   
+ }
+ nav a:hover{
+     background-color:#555;
+ }
+ 
+ a.tw{
+     background: url(tw.png) no-repeat center;
+     background-size:90%;
+    
+ }
+ a.fb{
+     background: url(fb.png) no-repeat center;
+     background-size:90%;
+     
+ }
+ .social a{
+    text-indent:-10000px;
+    cursor: pointer;
+    width: 25px;
+    height: 3px;
+    /* background-color: rgb(226, 226, 226); */
+    margin: 5px;
+
+}
+ul.social{
+    width:10%;
+}

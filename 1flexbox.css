@@ -1,0 +1,78 @@
+
+*{
+    font-family: verdana;
+    margin: 0;
+   
+}
+
+body{
+    background: #eee;
+    
+}
+
+.wrapper{
+    width: 100%;
+    max-width: 900px;
+    
+    
+/*    the max-width property ensures the element doesnt become too wide on large screens*/
+    margin: 0 auto;
+/*    auto means when extra-space available, redistribute evenly left and right*/
+    padding:30px 0;
+/*    padding percentage either top, bottom  or left, right are calculated based on the width of the containing element, not the height. It allows equal padding when using single percentage value. And other reason is element's height depends on its content*/
+/*    box-sizing: border-box;*/
+}
+
+.flex-container{
+    display:flex;
+    height:200px;
+    background-color: yellow;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* align-content: center; */
+    /* flex-direction:column; */
+    /* flex-flow:row wrap; */
+
+}
+.box{
+    height:100px;
+    width:100px;
+/*    flex-grow:1;*/
+    /* flex: 1 1 0; */
+     /* This replaces min-width and flex-grow */
+    flex-basis: 20%;
+    margin: 10px;
+    text-align: center;
+    line-height: 100px;
+
+
+}
+/*if we apply flex grow to this, all will collapse at same rate once the screen is sized smaller. However since we set min-width at 100px, if the scren is smaller than 100px all the boxes will stop shrinking. --> FLEXIBLE WRAP comes in!!*/
+/*--> RESPONSIVE website*/
+
+/*flex-grow:growth rate*/
+/*we can add float:left hear and the white space of parent element disappear because boxes no longer occupy height. If we use flex it keeps the same space without collapsing. If we want to keep the space we have to add an empty .flex-container element and clear the float to resume normal doc flow*/
+.one{
+    background:red;
+    order: -1;
+    align-self: first baseline;
+/*    flex-grow:1;*/
+}
+/*This is the only one that is growing*/
+.two{
+    background:blue;
+   /* flex-grow:2; */
+    order:2;
+    align-self: flex-end;
+
+}
+/*The growth rate is twice as red*/
+.three{
+    background:green;
+    order:1;
+}
+/*
+we can do: change how they grow, shrink, add space; stack on top of each other.
+Normally we use float*/
+
