@@ -75,8 +75,20 @@
 * Elements with transform, filter, or perspective properties
 * Flex and grid container children with z-index other than auto
 * Elements with isolation: isolate
+4. flex box
 
-4. Nav bar
+- Simple demo of flex boxes:
+
+![alt text](image-3.png)
+
+- Use flex to arange a page appearance:
+![alt text](image-4.png)
+
+- Float vs Flex vs Grid
+
+![alt text](image-5.png)
+- 
+5. Nav bar
 
 ![alt text](image.png)
 
@@ -92,3 +104,12 @@
 -  style link consistently( remove underlines, set padding, colors, add hover)
 -  Use position: fixed to keep the navbar visible while scrolling
 
+6. Grid
+
+- Accurate in dividing width in a container:
+![alt text](image-6.png)
+
+![alt text](image-8.png)
+
+-  transform: rotateZ(45deg) in grid:
+![alt text](image-7.png)

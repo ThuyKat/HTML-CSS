@@ -8,7 +8,6 @@
   </head>
   <body>
     <div class="wrapper">
-
       <nav>
         <ul>
           <li><a href="">Home</a></li>
@@ -55,15 +54,18 @@
       </section>
       
     </div>
-    <scrip>
-      $("a.stack").on("click",function(){
-        $("article").addClass("stack");
-        });
-        $("a.grid").on("click",function(){
-        $("article").removeClass("stack");
+    <script>
+      $(document).ready(function() {
+        $("a.stack").on("click", function(e) {
+          e.preventDefault();
+          $("article").addClass("stack");
         });
         
-      
-      </scrip>
+        $("a.grid").on("click", function(e) {
+          e.preventDefault();
+          $("article").removeClass("stack");
+        });
+      });
+      </script>
   </body>
 </html>
