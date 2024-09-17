@@ -1,0 +1,30 @@
+body{
+    border:solid 1px blue;
+}
+/* clear fix hack : it adds extra elements underneath 2 floating elements to keep parents element from collapsing*/
+/* .clearfix::after {
+    content: "this is pseudo element";
+    display: table;
+    clear: both;
+    background-color: yellow;
+  } */
+/* use flow-root instead : it makes parents element to contain 2 floating elements without collapsing*/
+.clearfix{
+    border:solid 1px crimson;
+    background-color: pink;
+    display:flow-root;
+
+}
+  .float-left {
+    float: left;
+    width: 49%;
+    border:solid 1px crimson;
+    /* background-color: #f0f0f0; */
+  }
+  
+  .float-right {
+    float: right;
+    width: 50%;
+    border:solid 1px crimson;
+    /* background-color: #e0e0e0; */
+  }

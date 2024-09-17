@@ -1,0 +1,30 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    border: 2px solid #333;
+    padding: 10px;
+  }
+  /* All four items will appear in a 2x2 grid, despite two being inside the wrapper. */
+  .wrapper {
+    display: contents;
+    /* The following styles won't be applied due to display: contents */
+    border: 2px solid red;
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  .item {
+    background-color: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* This will still affect the items inside the wrapper */
+  .wrapper .item {
+    color: blue;
+  }
+  /* Key points to observe:
+The wrapper's border, padding, and background are ignored.
+All four items are laid out in the grid as if they were direct children of the grid container.
+The color property still cascades through the wrapper to its children. */
