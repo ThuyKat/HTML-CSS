@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+  }
+.button {
+    display: inline-block;
+    font-weight: bold;
+    line-height: 36px;
+    text-align: center;
+    padding: 0 8px;
+    min-width: 20px;
+    background: rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    text-transform: uppercase;
+    font-size: 90%
+  }
+  * {
+    transition: all .2s, height 1ms;
+  }
+  #container, #footer {
+  width: calc(100% - 2em);
+  color: #555;
+  padding: 1em;
+  border: solid 1px crimson;
+}
+#container {
+    height: calc(100vh - 2em);
+    background: #eee;
+    
+}
+#sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 260px;
+    background: #2196f3;
+    margin-right: -304px;
+    padding: 20px;
+    color: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .5);
+  }
+  h3, h4 {
+    margin: 0;
+    margin-top: 1.5em;
+    margin-bottom: .6em;
+  }
+  label {
+    cursor: pointer;
+  }
+  label[for=darkThemeUsed]:after {
+    content: "No"
+  }
+  #footer {
+    height: 20px;
+    position: fixed;
+    bottom: 0;
+    background: #ddd;
+  }
+/* dark theme */
+#darkThemeUsed:checked ~ #container,
+#darkThemeUsed:checked ~ #footer {
+  color: #eee;
+}
+#darkThemeUsed:checked ~ #container {
+    background: #333;
+  }
+#darkThemeUsed:checked ~ #container #sidebar {
+    background: #303f9f;
+  }
+
+  #darkThemeUsed:checked ~ #container label[for=darkThemeUsed]:after {
+    content: "Yes"
+  }
+  #darkThemeUsed:checked ~ * .button {
+    background: rgba(255, 255, 255, .1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .8);
+  }
+  #darkThemeUsed:checked ~ #footer {
+    background: #444;
+  }
+/* show sidebar */
+#sidebarShown:checked ~ #container #sidebar {
+    margin-right: 0;
+  }
+ 
+

@@ -1,0 +1,199 @@
+<h1>Title: Order of Headings</h1>
+    <p>Intro para...</p>
+<h2>Subtitle</h2>
+<!-- Pre-formated text -->
+<hr>
+<h1><pre>Pre-formated text</pre></h1>
+<b><pre>This is pre-formated text: it preserves spaces and line braks exactly as they are written in HTML source code</pre></b>
+<pre>
+    function exampleCode() {
+        console.log("This is a code snippet");
+        return true;
+    }
+</pre>
+<p> This is normal paragraph tag</p>
+<hr>
+<!-- Mark tag -->
+<h1><mark>mark tag</mark></h1>
+<p>Example of using <mark>mark tag</mark> in highlighting text </p>
+<style>
+    @keyframes pulse{0%{opacity:1;} 50%{opacity:0.5;} 100%{opacity:1;}}
+</style>
+<p> Change styling for <mark style="background-color:rgb(194, 41, 67);color:white; font-weight:bold; box-shadow: 0 0 5px rgba(0,0,0,0.5);" >marked element</mark> with possible <mark style="background-color: #ff69b4; color:white;animation: pulse 2s infinite">animation?</mark> </p>
+
+<hr>
+
+<!-- Underlined text -->
+<h1> <u> Underline: re-introduced in HTML5 </u></h1>
+<hr>
+
+<!-- Abbreviation -->
+<h1>Abbreviation in action</h1>
+Abbreviation of <abbr title="Hypertext Markup Language" style="border-bottom: 1px dotted #000; cursor:help;font-variant: small-caps;letter-spacing: 0.1em;background-color: #f0f0f0; padding:0 2px">HTML</abbr> hoover to see its definition
+<hr>
+
+<!-- Inserted, Deleted,Sticken -->
+<h1>Inserted, Deleted,Sticken texts : inline-elements</h1>
+<ins>New Text</ins>
+<del>Deleted text</del>
+<s>Struck-through text</s>
+
+<hr>
+<!-- Superscript and Subscript -->
+<h1>Super and sub scripts</h1>
+<h2>Superscript example</h2>
+<abbr title="Superscript" style="cursor:help;background-color:rgb(209, 200, 200)">X<sup>2</sup> </abbr>
+
+1<sup>st</sup> and 2<sup>nd</sup>
+
+<h2>Subscripts example</h2>
+H<sub>2</sub>O 
+A<sub>n</sub>
+
+<hr>
+<h1>a tag</h1>
+
+<a href="tel:11234567890">Call us</a>
+
+<a href="javascript:myFunction();">Run Code</a>
+
+
+<a href="#!" onclick="myFunction();">Run Code</a>
+
+<a href="mailto:example@example.com">Send email</a>
+
+<a href="mailto:example@example.com?cc=john@example.com&bcc=jane@example.com">Send email</a>
+
+<hr>
+
+<!-- order list -->
+<h1>Order list</h1>
+<ol start="3" reversed type="a">
+    <li>Item</li>
+    <li>Some Other Item</li>
+    <li value="100">Yet Another Item</li>
+</ol>
+<hr>
+<!-- description list -->
+<h1>Description List</h1>
+<dl>
+    <dt>name 1</dt>
+    <dt>name 2</dt>
+    <dd>value for 1 and 2</dd>
+    <dt>name 3</dt>
+    <dd>value for 3</dd>
+    <dd>value for 3</dd>
+    </dl>
+    <hr>
+<!-- table -->
+<h1>Table</h1>
+<style>
+    td{
+        border:solid 1px black;
+    }
+</style>
+<table>
+    <tr>
+    <td>row 1 col 1</td>
+    <td>row 1 col 2</td>
+    <td>row 1 col 3</td>
+    </tr>
+
+    <tr>
+    <td colspan="3">This second row spans all three columns</td>
+    </tr>
+
+    <tr>
+    <td rowspan="2">This cell spans two rows</td>
+    <td>row 3 col 2</td>
+    <td>row 3 col 3</td>
+    </tr>
+
+    <tr>
+    <td>row 4 col 2</td>
+    <td>row 4 col 3</td>
+    </tr>
+
+    </table>
+    <br>
+<!-- colgroup -->
+    <table>
+        <colgroup>
+            <col style="background-color: #f2f2f2;">
+            <col style="background-color: #e6f2ff;">
+            <col style="background-color: #fff0f0;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John Doe</td>
+                <td>30</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>25</td>
+                <td>Canada</td>
+            </tr>
+            <tr>
+                <td>Bob Johnson</td>
+                <td>35</td>
+                <td>UK</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- semantic -->
+    <br>
+    <table>
+        <caption>Table Title</caption> <!--| caption is the first child of table |-->
+        <thead> <!--======================| thead is after caption |-->
+        <tr>
+        <th>Header content 1</th>
+        <th>Header content 2</th>
+        </tr>
+        </thead>
+        <tbody> <!--======================| tbody is after thead |-->
+        <tr>
+        <td>Body content 1</td>
+        <td>Body content 2</td>
+        </tr>
+        </tbody>
+        <tfoot><!--| tfoot can be placed before or after tbody, but not in a group of tbody. |-->
+        <!--| Regardless where tfoot is in markup, it is rendered at the bottom. |-->
+        <tr>
+        <td>Footer content 1</td>
+        <td>Footer content 2</td>
+        </tr>
+        </tfoot>
+        </table>
+<br>
+  <!-- scope -->
+  <table>
+    <thead>
+    <tr>
+    <td></td>
+    <th scope="col">Column Heading 1</th>
+    <th scope="col">Column Heading 2</th>
+   
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <th scope="row">Row Heading 1</th>
+    <td></td>
+    <td></td>
+    </tr>
+    <tr>
+    <th scope="row">Row Heading 1</th>
+    <td></td>
+    <td></td>
+    </tr>
+    </tbody>
+    </table>
