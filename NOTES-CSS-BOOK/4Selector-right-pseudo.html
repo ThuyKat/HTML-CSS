@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:right Pseudo-class Example (Print)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Styles for screen viewing */
+        @media screen {
+            .page {
+                border: 1px solid #000;
+                margin: 20px auto;
+                padding: 20px;
+                width: 21cm;
+                height: 29.7cm; /* A4 size */
+                box-sizing: border-box;
+            }
+        }
+
+        /* Styles for print */
+        @media print {
+            @page {
+                size: A4;
+                margin: 2cm;
+            }
+
+            /* Style for right pages */
+            @page :right {
+                @top-right {
+                    content: "Page " counter(page);
+                }
+                margin-left: 3cm;
+                margin-right: 2cm;
+            }
+
+            /* Style for left pages */
+            @page :left {
+                @top-left {
+                    content: "Chapter " counter(chapter);
+                }
+                margin-left: 2cm;
+                margin-right: 3cm;
+            }
+
+            /* Increment chapter counter */
+            h1 {
+                counter-increment: chapter;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <h1>Chapter 1: Introduction</h1>
+        <p>This is the content of the first page. In print view, this would be a right page.</p>
+    </div>
+
+    <div class="page">
+        <p>This is the content of the second page. In print view, this would be a left page.</p>
+    </div>
+
+    <div class="page">
+        <h1>Chapter 2: Main Content</h1>
+        <p>This is the content of the third page. In print view, this would be a right page again.</p>
+    </div>
+
+    <div class="page">
+        <p>This is the content of the fourth page. In print view, this would be a left page.</p>
+    </div>
+</body>
+</html>
+

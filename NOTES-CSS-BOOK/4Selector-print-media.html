@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Layout Example</title>
+    <style>
+         @media screen {
+         body {
+                margin: 0;
+                padding: 0;
+                counter-reset: page 0 chapter 1; /* Start chapter at 1 */
+
+            }
+            .page {
+                page-break-after: always;
+                position: relative;
+                width: 21cm;
+                height: 29.7cm; /* A4 size */
+                margin: 20px auto;
+                padding: 20px;
+                box-sizing: border-box;
+                counter-increment: page;
+                border: 1px solid #000;
+            }
+             /* Increment chapter counter */
+             h1 {
+                counter-increment: chapter;
+            }
+            /* page number */
+            .page::before, .page::after {
+                position: absolute;
+                top: 10mm;
+                font-size: 10pt;
+            }
+            .page:nth-child(odd)::before {
+                content: "Chapter " counter(chapter);
+                left: 10mm;
+               
+            }
+            .page:nth-child(odd)::after {
+                content: "Page " counter(page);
+                right: 10mm;
+
+            }
+            .page:nth-child(even)::before {
+                content: "Page " counter(page);
+                right: 10mm;
+            }
+            .page:nth-child(odd) {
+                
+                
+                padding-left: 30mm;
+                padding-right: 20mm;
+            }
+            .page:nth-child(even) {
+                
+                padding-left: 20mm;
+                padding-right: 30mm;
+            }
+            .page:nth-child(even)::after {
+                left: 10mm;
+                right: auto;
+            }
+        }
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                counter-reset: page 0 chapter 1; /* Start chapter at 1 */
+
+            }
+            .page {
+                page-break-after: always;
+                position: relative;
+                height: 297mm;
+                width: 210mm;
+                margin: 0;
+                padding: 20mm;
+                box-sizing: border-box;
+                counter-increment: page;
+            }
+             /* Increment chapter counter */
+             h1 {
+                counter-increment: chapter;
+            }
+            /* page number */
+            .page::before, .page::after {
+                position: absolute;
+                top: 10mm;
+                font-size: 10pt;
+            }
+            .page:nth-child(odd)::before {
+                content: "Chapter " counter(chapter);
+                left: 10mm;
+               
+            }
+            .page:nth-child(odd)::after {
+                content: "Page " counter(page);
+                right: 10mm;
+
+            }
+            .page:nth-child(even)::before {
+                content: "Page " counter(page);
+                right: 10mm;
+            }
+            .page:nth-child(odd) {
+                
+                
+                padding-left: 30mm;
+                padding-right: 20mm;
+            }
+            .page:nth-child(even) {
+                
+                padding-left: 20mm;
+                padding-right: 30mm;
+            }
+            .page:nth-child(even)::after {
+                left: 10mm;
+                right: auto;
+            }
+           
+        }
+
+    </style>
+</head>
+<body>
+    <div class="page">
+        <h1>Chapter 1: Introduction</h1>
+        <p>This is the content of the first page (right page in print).</p>
+    </div>
+    <div class="page">
+        <p>This is the content of the second page (left page in print).</p>
+    </div>
+    <div class="page">
+        <h1>Chapter 2: Main Content</h1>
+        <p>This is the content of the third page (right page in print).</p>
+    </div>
+    <div class="page">
+        <p>This is the content of the fourth page (left page in print).</p>
+    </div>
+</body>
+</html>

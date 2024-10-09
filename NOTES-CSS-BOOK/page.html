@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book-like Page Navigation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .book {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .page {
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 40px;
+            width: 40%;
+            max-width: 500px;
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .left-page {
+            border-right: 1px solid #ddd;
+        }
+
+        .right-page {
+            border-left: 1px solid #ddd;
+        }
+
+        .page-number {
+            position: absolute;
+            top: 10px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .left-page .page-number {
+            left: 10px;
+        }
+
+        .right-page .page-number {
+            right: 10px;
+        }
+
+        .nav-area {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 50%;
+            cursor: pointer;
+            border:solid 1px crimson;
+        }
+
+        .nav-left {
+            left: 0;
+        }
+
+        .nav-right {
+            right: 0;
+        }
+
+        @media (max-width: 768px) {
+            .book {
+                flex-direction: column;
+            }
+
+            .page {
+                width: 80%;
+                max-width: none;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="book" id="book">
+        <div class="page left-page" id="page1">
+            <div class="page-number">Page 1</div>
+            <h2>Page 1</h2>
+            <p>This is the content of page 1.</p>
+            <div class="nav-area nav-left" onclick="previousPage()"></div>
+            <div class="nav-area nav-right" onclick="nextPage()"></div>
+        </div>
+        <div class="page right-page" id="page2">
+            <div class="page-number">Page 2</div>
+            <h2>Page 2</h2>
+            <p>This is the content of page 2.</p>
+            <div class="nav-area nav-left" onclick="previousPage()"></div>
+            <div class="nav-area nav-right" onclick="nextPage()"></div>
+        </div>
+    </div>
+
+    <script>
+        const totalPages = 6; // Set the total number of pages
+        let currentPage = 1;
+
+        function updatePages() {
+            const leftPage = document.querySelector('.left-page');
+            const rightPage = document.querySelector('.right-page');
+
+            leftPage.innerHTML = `
+                <div class="page-number">Page ${currentPage}</div>
+                <h2>Page ${currentPage}</h2>
+                <p>This is the content of page ${currentPage}.</p>
+                <div class="nav-area nav-left" onclick="previousPage()"></div>
+                <div class="nav-area nav-right" onclick="nextPage()"></div>
+            `;
+
+            rightPage.innerHTML = `
+                <div class="page-number">Page ${currentPage + 1}</div>
+                <h2>Page ${currentPage + 1}</h2>
+                <p>This is the content of page ${currentPage + 1}.</p>
+                <div class="nav-area nav-left" onclick="previousPage()"></div>
+                <div class="nav-area nav-right" onclick="nextPage()"></div>
+            `;
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages - 1) {
+                currentPage += 2;
+                updatePages();
+            }
+        }
+
+        function previousPage() {
+            if (currentPage > 1) {
+                currentPage -= 2;
+                updatePages();
+            }
+        }
+    </script>
+</body>
+</html>

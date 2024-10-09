@@ -1,9 +1,12 @@
-
 <style>
     input:in-range {
-    border: 1px solid blue;
+        border: 2px solid blue;
+    }
+    input:out-of-range {
+        border: 2px solid red;
     }
 </style>
-    <input type="number" min="10" max="20" value="15">
-   
-    <p>The border for this value will be blue</p>
+
+<input type="number" min="10" max="20" value="15">
+
+<p>The border will be blue if the value is between 10 and 20, and red otherwise.</p>
