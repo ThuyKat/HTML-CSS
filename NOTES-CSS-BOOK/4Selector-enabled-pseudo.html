@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:enabled Pseudo-class Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        input, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        /* Styling for enabled inputs */
+        input:enabled {
+            border: 2px solid #4CAF50;
+            background-color: #f0fff0;
+        }
+
+        /* Styling for enabled buttons */
+        button:enabled {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Hover effect for enabled buttons */
+        button:enabled:hover {
+            background-color: #45a049;
+        }
+
+        /* Styling for disabled elements */
+        input:disabled, button:disabled {
+            border: 2px solid #ccc;
+            background-color: #f1f1f1;
+            color: #888;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Enabled input">
+        <input type="text" placeholder="Disabled input" disabled>
+        <button type="submit">Enabled Button</button>
+        <button type="button" disabled>Disabled Button</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+  <style>
+input[type="radio"]:default + label {
+    color: blue;
+    font-weight: bold;
+  }
+  
+  select option:default {
+    background-color: #e0e0e0;
+  }
+  
+  button:default {
+    background-color: #4CAF50;
+    color: white;
+  }
+  </style>
+<form>
+    <fieldset>
+      <legend>Choose a color:</legend>
+      <input type="radio" id="red" name="color" value="red">
+      <label for="red">Red</label>
+      <!-- default option -->
+      <input type="radio" id="blue" name="color" value="blue" checked> 
+      <label for="blue">Blue</label>
+      <input type="radio" id="green" name="color" value="green">
+      <label for="green">Green</label>
+    </fieldset>
+    
+    <select>
+      <option>Small</option>
+      <!-- default option -->
+      <option selected>Medium</option>
+      <option>Large</option>
+    </select>
+    <!-- The default submit button is typically the first <button> or <input type="submit"> in the form's DOM order -->
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>

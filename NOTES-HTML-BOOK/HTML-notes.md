@@ -46,7 +46,7 @@ window.opener object from being sent with the request.
 7. Table
 - colspan/rowspan attribute: can be applied to < th> and < td> elements to span table cells over rows and columns. A value of zero (0) means that the cell will extend from the current row/column until the last row/column of the table
 - colgroup > col : group columns together, 'span' attribute can be used
-- browsers repeat the contents of <thead> on
+- browsers repeat the contents of < thead> on
 every page.
 - scope attribute in th tag:Defines which cells the header applies to (row, column, row group, or column group).
 

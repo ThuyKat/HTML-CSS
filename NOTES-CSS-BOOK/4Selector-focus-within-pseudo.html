@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:focus-within Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            border: 2px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .container:focus-within {
+            background-color: #f0f0f0;
+            border-color: #007bff;
+        }
+
+        input, button {
+            margin: 5px 0;
+            padding: 5px;
+        }
+
+        /* Style for when the container itself is focused */
+        .container:focus {
+            outline: 3px solid #28a745;
+        }
+
+        /* Additional style to show when a descendant is focused */
+        .container:focus-within::after {
+            content: "An element inside me or I myself am focused!";
+            display: block;
+            margin-top: 10px;
+            color: #007bff;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" tabindex="0">
+        <h2>Container 1 (Focusable)</h2>
+        <p>This container can receive focus directly.</p>
+        <input type="text" placeholder="Input 1">
+        <button>Button 1</button>
+    </div>
+
+    <div class="container">
+        <h2>Container 2 (Not Focusable)</h2>
+        <p>This container cannot receive focus directly, but its children can.</p>
+        <input type="text" placeholder="Input 2">
+        <button>Button 2</button>
+    </div>
+</body>
+</html>

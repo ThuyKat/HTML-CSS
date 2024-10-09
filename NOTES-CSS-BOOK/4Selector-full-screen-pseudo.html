@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:fullscreen Example</title>
+    <style>
+        #fullscreen-box {
+            width: 300px;
+            height: 200px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        /* Styles applied when the element is in fullscreen mode */
+        #fullscreen-box:fullscreen {
+            background-color: #ffcccc;
+            color: #333;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Vendor prefixes for broader browser support */
+        #fullscreen-box:-webkit-full-screen { background-color: #ffcccc; }
+        #fullscreen-box:-moz-full-screen { background-color: #ffcccc; }
+        #fullscreen-box:-ms-fullscreen { background-color: #ffcccc; }
+    </style>
+</head>
+<body>
+    <div id="fullscreen-box">
+        <p>Click the button to enter fullscreen mode</p>
+        <button onclick="toggleFullscreen()">Toggle Fullscreen</button>
+    </div>
+
+    <script>
+        function toggleFullscreen() {
+            var elem = document.getElementById("fullscreen-box");
+            if (!document.fullscreenElement) {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.webkitRequestFullscreen) { /* Safari */
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) { /* IE11 */
+                    elem.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { /* Safari */
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE11 */
+                    document.msExitFullscreen();
+                }
+            }
+        }
+    </script>
+</body>
+</html>

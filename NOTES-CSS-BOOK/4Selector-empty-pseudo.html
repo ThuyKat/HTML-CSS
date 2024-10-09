@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:empty Pseudo-class Example</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            border: 2px solid #333;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        /* Styling for empty boxes */
+        .box:empty {
+            background-color: #ffcccc;
+            border-color: #ff0000;
+        }
+
+        /* Styling for non-empty boxes */
+        .box:not(:empty) {
+            background-color: #ccffcc;
+        }
+
+        /* Add a message to empty boxes */
+        .box:empty::before {
+            content: "This box is empty";
+            color: #ff0000;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">This box has content</div>
+    <div class="box"></div>
+    <div class="box">Another non-empty box</div>
+    <div class="box">   </div>
+    <div class="box"></div>
+</body>
+</html>
