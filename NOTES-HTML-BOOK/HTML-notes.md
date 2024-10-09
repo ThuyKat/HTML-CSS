@@ -1,11 +1,12 @@
-# Heading
+# [HTML NOTES IN ACTION](note.html)
+## Heading
 1. In general, an article should have one h1 element for the main title followed by h2 subtitles
-# Paragraphs
+## Paragraphs
 1. < pre> 
 - Use cases: show programming code examples, layout of poems
 - Feature: maintain spaces and indentation exactly as they are written in HTML 
 
-# Text Formatting
+## Text Formatting
 1. < mark > 
 - Purpose:  new in HTML5 and is used to mark or highlight text in a document
 - Usecase: results of a search where the users enter search query

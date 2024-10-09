@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+    input:not([disabled]):not(.example){
+  background-color: #ccc;
+}
+div#focus-within {
+height: 80px;
+}
+#focus-within input{
+margin:30px;
+}
+
+div#focus-within:focus-within {
+background-color: #1565C0;
+}
+  </style>
+</head>
+<body>
+  <form>
+    Phone: <input type="tel" class="example">
+    E-mail: <input type="email" disabled="disabled">
+    Password: <input type="password">
+  </form>
+  <h3>Background is blue if the input is focused .</p>
+<div id="focus-within">
+<input type="text">
+</div>
+</body>
+</html>
