@@ -44,3 +44,79 @@ the type specified in the type= attribute.
             * Avoid using background images or complex selectors for visited links.
             * Use solid colors instead of rgba() or hsla().Solid colors are less likely to be exploited for history sniffing attacks.
             * Focus on simple color changes to indicate visited status.
+6. Attribute selectors
+- Note that this means an attribute selector can be used to select an element by its ID at a lower level of specificity than if it was selected with an ID selector: [ id="my-ID"] targets the same element as #my-ID but with lower specificity.
+- [ attribute] : With attribute 
+```css
+div[data-color] {
+color: red;
+}
+<div data-color="red">This will be red</div>
+<div data-color="green">This will be red</div>
+<div data-background="red">This will NOT be red</div>
+```
+- [ attribute="value"] : Selects elements with the given attribute and value.
+```css
+div[data-color="red"] {
+color: red;
+}
+<div data-color="red">This will be red</div>
+<div data-color="green">This will NOT be red</div>
+<div data-color="blue">This will NOT be red</div>
+```
+- [attribute*="value" ]: Selects elements with the given attribute and value where the given attribute contains the given value anywhere (as a substring).
+```css
+[class*="foo"] {
+color: red;
+}
+<div class="foo-123">This will be red</div>
+<div class="foo123">This will be red</div>
+<div class="bar123foo">This will be red</div>
+<div class="barfooo123">This will be red</div>
+<div class="barfo0">This will NOT be red</div>
+```
+- [attribute~="value" ]: Selects elements with the given attribute and value where the given value appears in a whitespace-separated list.
+```css
+[class~="color-red"] {
+color: red;
+}
+<div class="color-red foo-bar the-div">This will be red</div>
+<div class="color-blue foo-bar the-div">This will NOT be red</div>
+```
+- [attribute^="value" ]: Selects elements with the given attribute and value where the given attribute begins with the value.
+```css
+[class^="foo-"] {
+color: red;
+}
+<div class="foo-123">This will be red</div>
+<div class="foo-234">This will be red</div>
+<div class="bar-123">This will NOT be red</div>
+```
+- [attribute$="value" ]: ends with the value
+```css
+[class$="file"] {
+color: red;
+}
+<div class="foobar-file">This will be red</div>
+<div class="foobar-file">This will be red</div>
+<div class="foobar-input">This will NOT be red</div>
+```
+- [attribute|="value" ]: Selects elements with a given attribute and value where the attribute's value is exactly the given value or is exactly the given value followed by a hyphen ( - )
+```css
+[lang|="EN"] {
+color: red;
+}
+<div lang="EN-us">This will be red</div>
+<div lang="EN-gb">This will be red</div>
+<div lang="PT-pt">This will NOT be red</div>
+```
+- [attribute="value" i]: Selects elements with a given attribute and value where the attribute's value can be represented as Value, VALUE, vAlUe or any other case-insensitive possibility.
+```css
+[lang="EN" i] {
+color: red;
+}
+<div lang="EN">This will be red</div>
+<div lang="en">This will be red</div>
+<div lang="PT">This will NOT be red</div>
+```
+- :lang(en) : Element that matches :lang declaration, for example < span lang="en">
