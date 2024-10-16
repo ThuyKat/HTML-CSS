@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* body {
+    margin: 0; -->m-0
+  } */
+
+ /* .button {
+    display: inline-block; -->inline-block
+    font-weight: bold; -->font-bold
+    line-height: 36px;-->leading-[2rem]
+    text-align: center;-->text-center
+    padding: 0 8px; -->px-2 py-0
+    min-width: 20px;-->min-w-5
+    background: rgba(0, 0, 0, .1);-->bg-black/10
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3);-->shadow-[0_1px_2px_rgba(0,0,0,0.3)]
+    text-transform: uppercase;-->uppercase
+    font-size: 90%}-->text-[90%] 
+ */
+
+  /* * {
+    transition: all .2s, height 1ms;
+  } */
+ 
+  /* #container, #footer {
+  width: calc(100% - 2em); -->w-[calc(100%-2em)]
+  color: #555; -->text-[#555]
+  padding: 1em; -->p-[1em]
+  border: solid 1px crimson; -->border border-solid border-crimson
+} */
+
+/* #container {
+    height: calc(100vh - 2em); -->h-[calc(100vh - 2em)]
+    background: #eee;-->bg-[#eee]
+    
+} */
+
+/* #sidebar {
+    position: fixed;-->fixed
+    top: 0;-->inset-y-0
+    bottom: 0;
+    right: 0;-->right-0
+    width: 260px;-->w-[260px]
+    background: #2196f3;-->bg-[#2196f3]
+    margin-right: -304px;--> -mr-[304px] --> negative sign goes outside the brackets
+    padding: 20px;-->p-5
+    color: #fff;-->text-[#fff]
+    box-shadow: 0 0 4px rgba(0, 0, 0, .5);-->shadow-[0 0 4px rgba(0, 0, 0, .5)]
+  } */
+  
+  /* h3, h4 {
+    margin: 0;
+    margin-top: 1.5em;
+    margin-bottom: .6em;
+  } */
+  /* label {
+    cursor: pointer; -->cursor-pointer
+  }
+  label[for=darkThemeUsed]::after { --> after:content-['No'].
+    content: "No"
+  } */
+  
+  /* #footer {
+    height: 20px; -->h-5
+    position: fixed;-->fixed
+    bottom: 0;-->bottom-0
+    background: #ddd;-->bg-[#ddd]
+  } */
+/* dark theme */
+/* peer-checked:dark:text-gray-200 */
+/* #darkThemeUsed:checked ~ #container,
+#darkThemeUsed:checked ~ #footer {
+  color: #eee;
+} */
+/* #darkThemeUsed:checked ~ #container {
+    background: #333;
+  } */
+/* #darkThemeUsed:checked ~ #container #sidebar {
+    background: #303f9f;
+  } */
+ 
+  /* #darkThemeUsed:checked ~ #container label[for=darkThemeUsed]:after {
+    content: "Yes"
+  } */
+  /* #darkThemeUsed:checked ~ * .button {
+    background: rgba(255, 255, 255, .1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .8);
+  } */
+  /* #darkThemeUsed:checked ~ #footer {
+    background: #444;
+  } */
+/* show sidebar */
+/* #sidebarShown:checked ~ #container #sidebar {
+    margin-right: 0;
+  } */
+
+    </style>
+</head>
+<body class="m-0">
+   
+    <input type="checkbox" id="darkThemeUsed" class="peer/dark hidden" />
+
+    <div id="container" class=" w-[calc(100%-2em)] text-[#555] p-[1em] border border-solid border-crimson h-[calc(100vh-2rem)] bg-[#eee] peer-checked/dark:text-gray-200 peer-checked/dark:bg-neutral-700 [&_#sidebar]:peer-checked/dark:bg-[#303f9f]">
+        <input type="checkbox" id="sidebarShown" class="peer/sidebar hidden" />
+        <div id="sidebar" class="fixed inset-y-0 right-0 w-[260px] bg-[#2196f3] -mr-[304px] p-5 text-[#fff] shadow-[0 0 4px rgba(0, 0, 0, .5)]  peer-checked/sidebar:mr-0 transition-all ">
+            <label for="sidebarShown" class="inline-block font-bold leading-[2rem] text-center px-2 py-0 min-w-5 bg-black/10 shadow-[0_1px_2px_rgba(0,0,0,0.3)] uppercase text-[90%] cursor-pointer">x</label>
+            <h3 class="m-0 mt-6 mb-2.5">Super cool sidebar</h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+        </div>
+        <h3 class="mt-6 mb-2.5">Sample page</h3>
+        <p>
+            <label for="darkThemeUsed" class="cursor-pointer after:content-['No'] peer-checked/dark:after:content-['Yes']">Use dark theme? – </label>
+        </p>
+        
+        <label for="sidebarShown"  class="inline-block font-bold leading-[2rem] text-center px-2 py-0 min-w-5 bg-black/10 shadow-[0_1px_2px_rgba(0,0,0,0.3)] uppercase text-[90%] cursor-pointer peer-checked/dark:bg-white/10 peer-checked/dark:shadow-[0_1px_2px_rgba(0,0,0,0.8)] ">Toggle sidebar</label>
+    </div>
+    <div id="footer" class=" w-[calc(100%-2em)] text-[#555] p-[1em] border border-solid border-crimson h-5 fixed bottom-0 bg-gray-300 peer-checked:dark:text-white peer-checked:bg-[#444]">
+        (c) The 0815 Company
+    </div>
+
+</body>
+</html>
