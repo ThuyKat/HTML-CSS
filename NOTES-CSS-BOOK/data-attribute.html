@@ -1,0 +1,88 @@
+<style>
+    /* Styling based on data attribute */
+[data-status="active"] {
+  border-left: 4px solid green;
+}
+
+/* Combining data attributes with element selectors */
+button[data-action="delete"] {
+  background-color: #ff4136;
+  color: white;
+}
+
+/* Using data attributes in more complex selectors */
+#task-list li[data-task-status="complete"] {
+  text-decoration: line-through;
+  color: #888;
+}
+
+#task-list li[data-task-status="in-progress"] {
+  font-weight: bold;
+}
+</style>
+
+
+<div id="user-card" data-user-id="123" data-role="admin" data-status="active">
+    <h2>John Doe</h2>
+    <p>Administrator</p>
+  </div>
+  
+  <button data-action="delete" data-target="user-123">Delete User</button>
+  
+  <ul id="task-list">
+    <li data-task-status="complete">Complete tax returns</li>
+    <li data-task-status="in-progress">Write project proposal</li>
+    <li data-task-status="pending">Schedule team meeting</li>
+  </ul>
+
+  <button id="toggle-user-status">Toggle User Status</button>
+<button id="update-tasks">Update Tasks</button>
+<script>
+// Manipulating data-status of user-card
+const userCard = document.getElementById('user-card');
+const statusDisplay = document.getElementById('status-display');
+const toggleButton = document.getElementById('toggle-user-status');
+
+toggleButton.addEventListener('click', () => {
+  if (userCard.dataset.status === 'active') {
+    userCard.dataset.status = 'inactive';
+    statusDisplay.textContent = 'Inactive';
+  } else {
+    userCard.dataset.status = 'active';
+    statusDisplay.textContent = 'Active';
+  }
+  console.log(`User status changed to: ${userCard.dataset.status}`);
+});
+
+// Manipulating data-task-status of list items
+const taskList = document.getElementById('task-list');
+const updateTasksButton = document.getElementById('update-tasks');
+
+updateTasksButton.addEventListener('click', () => {
+  const tasks = taskList.querySelectorAll('li');
+  tasks.forEach(task => {
+    switch (task.dataset.taskStatus) {
+      case 'pending':
+        task.dataset.taskStatus = 'in-progress';
+        break;
+      case 'in-progress':
+        task.dataset.taskStatus = 'complete';
+        break;
+      case 'complete':
+        task.dataset.taskStatus = 'pending';
+        break;
+    }
+    console.log(`Task "${task.textContent}" status: ${task.dataset.taskStatus}`);
+  });
+});
+
+// You can also add CSS to visually reflect the status changes
+document.head.insertAdjacentHTML('beforeend', `
+  <style>
+    #user-card[data-status="inactive"] { opacity: 0.5; }
+    #task-list li[data-task-status="pending"] { color: orange; }
+    #task-list li[data-task-status="in-progress"] { color: blue; }
+    #task-list li[data-task-status="complete"] { color: green; text-decoration: line-through; }
+  </style>
+`);
+</script>
