@@ -75,5 +75,14 @@ NOTE:
 - vmin: viewport minimum, equal to the smaller of vw or vh -> useful for responsive design that need to work in both portrait and landscape orientatation
 - vmax: equal to the larger of vw or vh
 
+## Grid in Tailwind, Bootstrap vs normal CSS Grid
+- Bootstrap's grid system is built on a 12-column layout using flexbox. It automatically adjusts to a single column layout on smaller screens by default. 
+On larger screens, columns sit side-by-side within a row.On smaller screens (typically below 576px wide), the columns stack vertically.
+- Tailwind CSS provides utility classes for creating grid layouts. While it doesn't have a predefined 12-column system like Bootstrap, it offers flexible options for responsive designs. 
 
+NOTE: On smaller screens (below the "md" breakpoint), the grid system in Bootstrap and similar frameworks like Tailwind CSS automatically defaults to a single column layout when the content overflows.When content overflows on smaller screens, the single-column layout ensures that:
+  ---> Content remains readable by not being squeezed horizontally.
+  --->Users can scroll vertically to access all content.
+  --->The layout remains consistent and doesn't break due to overflow.
+This automatic responsiveness is a key feature of modern CSS frameworks, making it easier to create mobile-friendly designs without writing extensive media queries for every layout scenario.
 

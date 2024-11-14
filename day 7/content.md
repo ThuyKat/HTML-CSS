@@ -1,0 +1,6 @@
+- https://legacy.reactjs.org/docs/hello-world.html 
+- every html element is a js object -> inline css is property of style object
+- property name is Cammel Case. i.e: marginTop
+- object, number, function must be inside jsx expression
+- style-component: nested css, variable
+- SCSS

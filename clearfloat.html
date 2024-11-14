@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        button{
+            border: solid 1px rgb(33, 32, 32);
+            width:200px;
+            height:200px;
+            font-size: 50;
+            float:left;
+            line-height: 200px;
+            padding:0;
+        }
+        .wrapper:after{
+            display:block;
+            clear:both;
+            content:"abcde ";
+        }
+        p{
+            margin:0;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+<button class="one">1</button>
+<button class="two">2</button>
+</div>
+<button class="three">3</button>
+<button class="four">4</button>
+
+</body>
+</html>
+
